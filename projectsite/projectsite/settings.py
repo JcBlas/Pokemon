@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-t=e_+&8oahriluk0n#d8-i&x=bsv!sik(tyta537c-%ug4uy(_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'JcBlas.pythonanywhere.com']
+ALLOWED_HOSTS = [ 'JcBlas.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pokemon_app',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

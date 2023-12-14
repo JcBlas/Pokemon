@@ -17,13 +17,22 @@ Including another URLconf
 from django.contrib import admin
 
 from django.urls import path
-from pokemon_app.views import HomePageView, TrainerList, PokemonCard, Collection
-from pokemon_app import views
+from pokemon_app.views import HomePageView, TrainerList, CollectionList, TrainerCreateView, TrainerUpdateView, TrainerDeleteView, PokemonCardList, PokemonCardCreateView, PokemonCardUpdateView, PokemonCardDeleteView, CollectionCreateView, CollectionUpdateView, CollectionDeleteView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.HomePageView.as_view(), name='home'),
+    path('', HomePageView.as_view(), name='home'),
     path('trainer_list', TrainerList.as_view(), name='trainer-list'),
-    path('pokemon-card', PokemonCard.as_view(), name='pokemon-card'),
-    path('collection', Collection.as_view(), name='collection'),
+    path('collection', CollectionList.as_view(), name='collection'),
+    path('trainer_list/add', TrainerCreateView.as_view(), name='trainer-add'),
+    path('trainer_list/<pk>', TrainerUpdateView.as_view(), name='trainer-update'),
+    path('trainer_list/<pk>/delete', TrainerDeleteView.as_view(), name='trainer-delete'),
+    path('pokemoncard_list', PokemonCardList.as_view(), name='pokemoncard-list'),
+    path('pokemoncard_list/add', PokemonCardCreateView.as_view(), name='pokemoncard-add'),
+    path('pokemoncard_list/<pk>', PokemonCardUpdateView.as_view(), name='pokemoncard-update'),
+    path('pokemoncard_list/<pk>/delete', PokemonCardDeleteView.as_view(), name='pokemoncard-delete'),
+    path('collection_list/add', CollectionCreateView.as_view(), name='collection-add'),
+    path('collection_list/<pk>', CollectionUpdateView.as_view(), name='collection-update'),
+    path('collection_list/<pk>/delete', CollectionDeleteView.as_view(), name='collection-delete'),
 ]
